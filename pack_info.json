@@ -1,8 +1,6 @@
 {
-	"pack_version": "1.0.0",
-	"game_version": null,
-	"pack_info": "以官方提供的遊戲資料為核心，提供各式處理/提取遊戲資料的功能",
-	"to_do": [
-		"修正core.tools.run_here不能在單個函式內多次使用的問題"
-	]
+  "pack_version": "1.0.0",
+  "game_version": null,
+  "pack_info": "以官方提供的遊戲資料為核心，提供各式處理/提取遊戲資料的功能",
+  "to_do": ["修正core.tools.run_here不能在單個函式內多次使用的問題"]
 }

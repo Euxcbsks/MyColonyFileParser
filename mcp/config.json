@@ -1,6 +1,6 @@
 {
-	"self_check": true,
-	"check_update": true,
-	"auto_update": true,
-	"timeout": 1
+  "self_check": true,
+  "check_update": true,
+  "auto_update": true,
+  "timeout": 1
 }
