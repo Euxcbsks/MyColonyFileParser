@@ -1,8 +1,10 @@
 class InvalidFileError(LookupError):
-	pass
+    pass
+
 
 class InvalidPartError(LookupError):
-	pass
+    pass
+
 
 class InvalidUnitError(LookupError):
-	pass
+    pass
