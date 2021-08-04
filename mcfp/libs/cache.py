@@ -19,8 +19,15 @@ DEFAULT_TIMEOUT = 24 * 60 * 60 # 86400 seconds
 mem_cache = {}
 
 def _data_parser(data: Union[str, list, tuple, set, dict]) -> str:
-	if not isinstance(data, str) and type(data) in {str, list, tuple, set, dict}:
-		data = str(data)
+	if not isinstance(data, str):
+		try:
+			data = dumps(data, ensure_ascii=False)
+		except TypeError:
+			if isinstance(data, set):
+				data = dumps(list(data))
+			else:
+				raise TypeError("the `data` must be `str`, `list`, `tuple`, `set` or `dict`, "
+							f"not {data.__class__.__name__}")
 	
 	return data
 
