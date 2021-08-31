@@ -7,13 +7,13 @@ with open('requirements.txt', 'r', encoding = 'UTF-8') as require:
 	requirements = require.read().splitlines()
 
 setuptools.setup(
-	name = 'mcp',
-	url = 'https://github.com/Euxcbsks/mcp',
-	version = '1.0.0',
+	name = 'MyColonyFileParser',
+	url = 'https://github.com/Euxcbsks/MyColonyFileParser',
+	version = '1.0.4',
 	author = 'Euxcbsks',
 	author_email = 'hawhaw02030746@gmail.com',
 	license = 'MIT',
-	description = 'mcp - My Colony Python',
+	description = 'MCFP - My Colony File Parser',
 	long_description = long_description,
 	long_description_content_type = 'text/markdown',
 	install_requires = requirements,
@@ -23,5 +23,6 @@ setuptools.setup(
 		'License :: OSI Approved :: MIT License',
 		'Operating System :: OS Independent'
 	],
-	python_requires = '>=3.6'
+	python_requires = '>=3.6',
+	include_package_data=True
 )

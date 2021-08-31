@@ -1,3 +1,4 @@
+from typing import Generator, Union
 from .base import DictBase, ListBase
 from .categorybase import CategoryBase
 from .exceptions import InvalidUnitName
@@ -17,7 +18,7 @@ class DictCategory(DictBase, CategoryBase):
 		self.dict = data
 		super().__init__(file, name)
 	
-	def __getitem__(self, name):
+	def __getitem__(self, name) -> Union[DictUnit, ListUnit]:
 		try:
 			unit_data = self.dict[name]
 			unit_data_type = type(unit_data)
@@ -28,7 +29,11 @@ class DictCategory(DictBase, CategoryBase):
 		except KeyError:
 			raise InvalidUnitName(name)
 	
-	def units(self):
+	def __iter__(self):
+		for key in self.dict:
+			yield self[key]
+	
+	def units(self) -> Generator[str, None, None]:
 		for key in self.dict:
 			yield key
 
@@ -74,7 +79,7 @@ class ListCategory(ListBase, CategoryBase):
 		except TypeError:
 			raise TypeError(f"can't multiply sequence by non-int of type '{o.__class__.__name__}'")
 	
-	def __getitem__(self, target):
+	def __getitem__(self, target) -> Union[DictUnit, ListUnit]:
 		if isinstance(target, int):
 			try:
 				unit_data = self.list[target]
@@ -91,6 +96,10 @@ class ListCategory(ListBase, CategoryBase):
 		raise TypeError("category indices must be integers or slices, "
 						f"not {target.__class__.__name__}")
 	
-	def units(self):
+	def __iter__(self):
+		for i in range(len(self.list)):
+			yield self[i]
+	
+	def units(self) -> Generator[Union[dict, list], None, None]:
 		for item in self.list:
 			yield item
