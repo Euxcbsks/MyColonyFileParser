@@ -1,5 +1,6 @@
 from json import loads
 from pathlib import Path
+from typing import Generator
 
 from .base import DictBase
 from .exceptions import InvalidFileChannel, InvalidFileVersion
@@ -86,7 +87,7 @@ class FileBase(DictBase):
 	def __repr__(self) -> str:
 		return f"<File: '{self.name}', Version: '{self.version}'>"
 	
-	def categories(self):
+	def categories(self) -> Generator[str, None, None]:
 		for key in self.dict:
 			yield key
 	
