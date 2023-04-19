@@ -1,5 +1,7 @@
 # mcfp - My Colony File Parser
 
+**Just keep this repo as a souvenir, there's a lot of legacy code here, not worth using as a reference**
+
   [![DeepSource](https://deepsource.io/gh/MCW-My-Colony-Wiki/MyColonyFileParser.svg/?label=active+issues&show_trend=true&token=zjOyAP4RLEuWcm5YOU1NQJW_)](https://deepsource.io/gh/MCW-My-Colony-Wiki/MyColonyFileParser/?ref=repository-badge)
   
   [中文版readme](README_zh.md)
